@@ -7,9 +7,9 @@ public class DiceMachine implements YahtzeeConstants {
 		diceArray =new int[N_DICE];
 	}
 	
-	public int[] rollDice(boolean[] whichDice){
-		for (int i=0; i<whichDice.length; i++){
-			if (whichDice[i] == true){
+	public int[] rollDice(boolean[] selectedDice){
+		for (int i=0; i<selectedDice.length; i++){
+			if (selectedDice[i] == true){
 				diceArray[i] = rGen.nextInt(1, 6);
 			}
 		}
