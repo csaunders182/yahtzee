@@ -70,7 +70,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	 */
 	private void playGame() {
 		for (int turn=1; turn<=N_SCORING_CATEGORIES; turn++ ){
-			for (int player=0; player<nPlayers; player++){
+			for (int player=1; player<=nPlayers; player++){
 					println("player turn = " + playerNames[player]);
 					display.waitForPlayerToClickRoll(player);
 					roll();
