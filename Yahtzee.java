@@ -73,6 +73,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					display.waitForPlayerToClickRoll(player);
 					firstRoll(playerNames[player]);
 					display.waitForPlayerToSelectDice();
+					selectedDiceAssigner();
+					
 			}
 		}
 	}
@@ -83,7 +85,6 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 		diceRolls = dm.rollDice(whichDice);
 		display.displayDice(diceRolls);
-		println(diceRolls);
 	}
 		
 	/* Private instance variables */
@@ -92,4 +93,5 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	private YahtzeeDisplay display;
 	private DiceMachine dm;
 	private int[] diceRolls = new int[5];
+	private boolean[] selectedDice = new boolean[5]; 
 }
