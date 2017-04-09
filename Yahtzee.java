@@ -70,8 +70,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	private void playGame() {
 		for (int turn=1; turn<=N_SCORING_CATEGORIES; turn++ ){
 			for (int player=0; player<nPlayers; player++){
-				display.waitForPlayerToClickRoll(player);
-//				firstRoll(playerNames[0]);
+					display.waitForPlayerToClickRoll(player);
+					firstRoll(playerNames[player]);
 			}
 		}
 	}
@@ -81,6 +81,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			whichDice[i] = true;
 		}
 		diceRolls = dm.rollDice(whichDice);
+		display.displayDice(diceRolls);
 		println(diceRolls);
 	}
 		
