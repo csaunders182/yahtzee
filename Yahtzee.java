@@ -12,6 +12,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	public void run() {
 		setupPlayers();
 		initDisplay();
+		dm = new DiceMachine();
 		playGame();
 	}
 	
@@ -67,11 +68,26 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	 * implementation.
 	 */
 	private void playGame() {
-		/* You fill this in! */
+		for (int turn=1; turn<=N_SCORING_CATEGORIES; turn++ ){
+			for (int player=0; player<nPlayers; player++){
+				display.waitForPlayerToClickRoll(player);
+//				firstRoll(playerNames[0]);
+			}
+		}
+	}
+	private void firstRoll(String playerName){
+		boolean[] whichDice = new boolean[5];
+		for (int i=0; i<whichDice.length; i++){
+			whichDice[i] = true;
+		}
+		diceRolls = dm.rollDice(whichDice);
+		println(diceRolls);
 	}
 		
 	/* Private instance variables */
 	private int nPlayers;
 	private String[] playerNames;
 	private YahtzeeDisplay display;
+	private DiceMachine dm;
+	private int[] diceRolls = new int[5];
 }
