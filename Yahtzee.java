@@ -72,10 +72,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		for (int turn=1; turn<=N_SCORING_CATEGORIES; turn++ ){
 			for (int player=0; player<nPlayers; player++){
 					display.waitForPlayerToClickRoll(player);
-					firstRoll(playerNames[player]);
+					Roll();
 					display.waitForPlayerToSelectDice();
 					selectedDiceAssigner();
-					secondRoll();
+					Roll();
 					display.waitForPlayerToSelectDice();
 					
 			}
@@ -92,7 +92,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 	
-	private void secondRoll(){
+	private void Roll(){
 		int[] replacedDiceRolls = dm.rollDice(selectedDice);
 		for (int i=0; i<diceRolls.length; i++){
 			if (selectedDice[i] == true){
