@@ -13,7 +13,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		setupPlayers();
 		initDisplay();
 		dm = new DiceMachine();
-		selectedDice = [true,true,true,true,true]
+		resetSelectedDice();
 		playGame();
 	}
 	
